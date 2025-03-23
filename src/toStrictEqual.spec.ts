@@ -2,7 +2,7 @@
 // jest.config.js > testRegex -> 테스트 파일 확장자 바꾸고 싶을때
 // default는 testRegex: /__tests__/.*|(\\.|/)(test|spec))\\.[jt]sx?$
 
-import obj from "./toStrictEqual";
+import obj, { random } from "./toStrictEqual";
 
 // 객체끼리 비교할 때는 toStrictEqual
 test("객체는 toStrictEqual로 비교한다. ", () => {
@@ -12,6 +12,10 @@ test("객체는 toStrictEqual로 비교한다. ", () => {
 });
 
 test("배열끼리도 toStrictEqual 써야한다. ", () => {
-  expect([1,2,3]).toStrictEqual([1,2,3]); // true
-  expect([1,2,3]).not.toBe([1,2,3]); // true
+  expect([1, 2, 3]).toStrictEqual([1, 2, 3]); // true
+  expect([1, 2, 3]).not.toBe([1, 2, 3]); // true
+});
+
+test("random 함수는 toStrictEqual로 비교할 수 있다. ", () => {
+  expect(random()).toStrictEqual({ a: expect.any(Number) });
 });

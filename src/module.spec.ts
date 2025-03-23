@@ -1,8 +1,10 @@
 // commonjs - jest mock은 호이스팅 됨
 // __mocks__ 파일 안에 해당 파일이 있으면 그 파일 참조
 jest.mock("./module");
+jest.mock("axios");
 
 import { obj } from "./module";
+import axios from "axios";
 
 // 모킹 함수를 오버라이드 할 수 있음  - default import
 // jest.mock("./module", () => {
@@ -34,4 +36,8 @@ test("모듈을 전부 모킹", () => {
   // 속성 수정도 가능
   jest.replaceProperty(obj, "prop", "replaced");
   console.log(obj);
+});
+
+test("axios를 전부 모킹", () => {
+  console.log(axios);
 });
