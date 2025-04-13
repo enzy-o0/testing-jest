@@ -1,6 +1,3 @@
-강의 교안의 소스가 추가되어 있습니다  
-https://github.com/ZeroCho/test-jest
-
 jest 실행 스크립트 옵션
 
 --runInBand
